@@ -1,18 +1,25 @@
 import './App.css'
+import { Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import LogWorkout from './pages/LogWorkout'
+import Layout from './components/Layout/Layout'
+import Progress from './pages/Progress'
+import ErrorNotFound from './pages/ErrorNotFound'
 
 function App() {
 
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">
-        Hello world! This is My fitness tracker capstone project.
-      </h1>
-      <p>
-        This project is all aboout monitoring and working with individual fitness. It helps the user take control of their health
-      </p>
-    </div>
-    
-   
+    <Routes>
+      
+      <Route path='/' element={<Layout />}>
+        <Route path='*' element={<ErrorNotFound />} />
+        <Route index element={<Home/>}/>
+        <Route path='/LogWorkout' element={<LogWorkout />} />
+        <Route path='/progress' element={ <Progress/>} />
+      </Route>
+      
+    </Routes>
+
   )
 }
 
