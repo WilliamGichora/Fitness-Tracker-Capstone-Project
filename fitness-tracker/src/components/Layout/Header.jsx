@@ -37,24 +37,28 @@ function Header() {
                     <Link
                         to="/"
                         className="block px-4 py-2 mt-2 lg:mt-0 text-gray-800 hover:text-lime-700"
+                        onClick={()=>setIsOpen(!isOpen)}
                     >
                         Dashboard
                     </Link>
                     <Link
                         to="/workouts"
                         className="block px-4 py-2 mt-2 lg:mt-0 text-gray-800 hover:text-lime-700"
+                        onClick={() => setIsOpen(!isOpen)}
                     >
                         Workouts
                     </Link>
                     <Link
                         to="/progress"
                         className="block px-4 py-2 mt-2 lg:mt-0 text-gray-800 hover:text-lime-700"
+                        onClick={() => setIsOpen(!isOpen)}
                     >
                         Progress
                     </Link>
                     <Link
-                        to="/exercise"
+                        to="/exercises"
                         className="block px-4 py-2 mt-2 lg:mt-0 text-gray-800 hover:text-lime-700 lg:hidden"
+                        onClick={() => setIsOpen(!isOpen)}
                     >
                         Exercises
                     </Link>

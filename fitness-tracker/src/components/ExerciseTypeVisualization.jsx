@@ -64,7 +64,6 @@ function ExerciseTypeDoughnutChart() {
             <div className="w-full h-[25rem]">
                 <Doughnut data={data} options={options} className="mx-auto md:mx-0 lg:mx-auto" />
             </div>
-
         </div>
     );
 }
