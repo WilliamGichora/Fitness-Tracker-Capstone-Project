@@ -6,6 +6,7 @@ import Layout from './components/Layout/Layout'
 import Progress from './pages/Progress'
 import ErrorNotFound from './pages/ErrorNotFound'
 import WorkoutHistory from './pages/WorkoutHistory'
+import Exercises from './pages/Exercises'
 
 function App() {
 
@@ -16,7 +17,8 @@ function App() {
         <Route index element={<Home/>}/>
         <Route path='/LogWorkout' element={<LogWorkout />} />
         <Route path='/progress' element={<Progress />} />
-        <Route path='/workouts' element={<WorkoutHistory/> } />
+        <Route path='/workouts' element={<WorkoutHistory />} />
+        <Route path='/exercises' element={ <Exercises/>} />
       </Route>
     </Routes>
 

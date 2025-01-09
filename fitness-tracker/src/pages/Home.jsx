@@ -53,9 +53,9 @@ function Home() {
         </div>
       </section>
 
-      <div className="md:hidden w-20 border-none sticky left-full bottom-6">
+      <div className="md:hidden w-16 border-none sticky left-full bottom-6">
         <Link to={"/LogWorkout"}>
-          <img src={circle} alt="Log Workout" />
+          <img src={circle} alt="Log Workout" className="bg-lime-600/100 rounded-full border-none" />
         </Link>
       </div>
 

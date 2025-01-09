@@ -1,6 +1,10 @@
+import ExerciseCatgeory from "../components/ExerciseCategory"
+
 function Exercises() {
   return (
-    <div>Exercises</div>
+    <div className="w-full">
+      <ExerciseCatgeory/>
+    </div>
   )
 }
 

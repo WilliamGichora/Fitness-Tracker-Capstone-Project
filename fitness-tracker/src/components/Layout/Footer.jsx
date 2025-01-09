@@ -3,7 +3,7 @@ function Footer() {
     <footer className="bg-lime-800/85 text-gray-800 p-6 font-poppins shadow-inner min-h-40 mt-5 flex items-center">
       <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center">
         <div className="mb-4 lg:mb-0">
-          <h2 className="text-lg font-bold text-white">Mark Gichora</h2>
+          <h2 className="text-lg font-bold text-white md:text-center">Mark Gichora</h2>
           <p className="text-sm">Frontend Developer | Fitness Tracker Project</p>
         </div>
 
@@ -36,7 +36,7 @@ function Footer() {
 
         <div className="text-center lg:text-right font-semibold">
           <p className="text-sm">Fitness Tracker Capstone Project: ALX Cohort 2 Front End Bootcamp</p>
-          <p className="text-sm">Empowering the Next Generation of Developers</p>
+          <p className="text-sm"> Thank you ALX for the Journey.<br/> Looking forward to further future collaboration and engagements</p>
         </div>
       </div>
     </footer>

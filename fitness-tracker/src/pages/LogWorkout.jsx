@@ -40,7 +40,10 @@ function LogWorkout() {
         getNextPageParam: (lastPage) => lastPage.next || null,
     });
 
+
     const finalExercises = exercises?.pages.reduce((acc, page) => acc.concat(page.results), []);
+    console.log(finalExercises);
+    
 
     //React Form Hook
     const { register, handleSubmit, control, reset, formState: { errors } } = useForm({
@@ -110,6 +113,7 @@ function LogWorkout() {
                                 >
                                     {exercise.name}
                                 </div>
+                                
                             ))}
                         </div>
                         
