@@ -67,9 +67,9 @@ function LogWorkout() {
     };
 
     //function to 
-    const handleAddExercise = (exerciseName) => {
+    const handleAddExercise = (exerciseName,exerciseID) => {
         if (!fields.find((field) => field.name === exerciseName)) {
-            append({ name: exerciseName, sets: "", reps: "", weight: "" });
+            append({ name: exerciseName,id:exerciseID, sets: "", reps: "", weight: "" });
         }
     };
 
@@ -102,7 +102,7 @@ function LogWorkout() {
                             {finalExercises?.map((exercise) => (
                                 <div
                                     key={exercise.id}
-                                    onClick={() => handleAddExercise(exercise.name)}
+                                    onClick={() => handleAddExercise(exercise.name,exercise.id)}
                                     className={`p-3 mb-2 border rounded-md cursor-pointer ${fields.find((field) => field.name === exercise.name)
                                             ? "bg-green-100 border-green-400"
                                             : "bg-white hover:bg-gray-100"
@@ -116,7 +116,6 @@ function LogWorkout() {
                     </InfiniteScroll>
                 </div>
 
-                {/* Exercise Inputs */}
                 {fields.map((field, index) => (
                     <div key={field.id} className="border p-4 rounded-lg">
                         <h3 className="font-semibold">{field.name}</h3>

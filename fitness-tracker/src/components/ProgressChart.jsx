@@ -1,57 +1,40 @@
 import useWorkoutStore from "../stores/useWorkoutStore";
 import { Line } from 'react-chartjs-2'
-import {
-    Chart as ChartJS,
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend,
-} from 'chart.js';
+import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, } from 'chart.js';
 
-ChartJS.register(
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend
-);
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
- const options = {
+const options = {
     responsive: true,
     plugins: {
         legend: {
             position: 'top',
         },
-        
+
     },
 };
-
 
 function ProgressChart() {
 
     const workouts = useWorkoutStore(state => state.workouts);
-    const data = workouts.reduce((acc, workout) => {
+    
+    const weightData = workouts.reduce((acc, workout) => {
         const date = new Date(workout.timestamp).toLocaleDateString();
-        acc[date] = (acc[date] || 0) + workout.exercises.map(exercise => exercise.weight) * workout.exercises.map(exercise => exercise.reps)
+        const totalWeight = workout.exercises.reduce((sum, ex) => sum + ex.weight * ex.reps * ex.sets, 0);
+
+        acc[date] = (acc[date] || 0) + totalWeight;
         return acc;
-    }, {})
+    }, {});
 
-    console.log(data);
-
-    const labels = Object.keys(data);
-    const weightData = Object.values(data);
+    const labels = Object.keys(weightData);
+    const displaydata = Object.values(weightData);
 
     const chartData = {
         labels,
         datasets: [
             {
                 label: 'Total Weight Lifted (kg)',
-                data: weightData,
+                data: displaydata,
                 fill: false,
                 backgroundColor: 'rgb(75, 192, 192)',
                 borderColor: 'rgba(75, 192, 192, 0.2)',
@@ -60,9 +43,8 @@ function ProgressChart() {
     };
 
     return (
-        <section className="container mx-auto my-8 font-poppins">
-            <h2 className="text-center text-lg font-bold mb-4">Progress Tracking</h2>
-            <Line data={chartData} options={options}/>
+        <section className="container mx-auto my-8 font-poppins  ">
+            <Line data={chartData} options={options} className="mx-auto w-full" />
         </section>
     )
 }
