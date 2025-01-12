@@ -3,6 +3,7 @@ import ExerciseTypeDoughnutChart from "../components/ExerciseTypeVisualization"
 import IntensityVisualization from "../components/IntensityVisualization"
 import ProgressChart from "../components/ProgressChart"
 
+//page to view progress charts--. 4 in number 
 function Progress() {
   return (
     <div>

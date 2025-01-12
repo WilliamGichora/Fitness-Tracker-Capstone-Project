@@ -11,14 +11,17 @@ import legs from "../assets/legs.jpg";
 import shoulders from "../assets/shoulder.jpg";
 import ExerciseCard from "./ExerciseCard";
 
+// Fetches and displays categories of exercises --> 8 in number
 function ExerciseCategory() {
     const [selectedCategory, setSelectedCategory] = useState(null);
 
+    //usewuery for fetching categories
     const { data: exerciseCategories, isError, isLoading } = useQuery({
         queryKey: ["exCategory"],
         queryFn: fetchExerciseCategory,
     });
 
+    //use query for fetching category id, and happens only if a category is selected by the user
     const {
         data: exercisesOfCategory,
         isError: exercisesError,

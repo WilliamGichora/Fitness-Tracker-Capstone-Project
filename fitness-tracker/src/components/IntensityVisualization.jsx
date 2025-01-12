@@ -3,6 +3,8 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import useWorkoutStore from "../stores/useWorkoutStore"
 
 ChartJS.register(ArcElement, Tooltip, Legend);
+
+//doughnut chart to visualize the degree/ratio comparison of either intense,moderate or light workouts performed
 function IntensityVisualization() {
     const workouts = useWorkoutStore(state=>state.workouts)
 

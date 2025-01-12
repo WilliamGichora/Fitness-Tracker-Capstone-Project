@@ -8,6 +8,7 @@ const BarChartWeeklyVisualization = () => {
 
     const workouts = useWorkoutStore(state => state.workouts);
 
+    //returns the current week number based on the number of days past the first day of the year
     const getWeekNumber = (date) => {
         const startOfYear = new Date(date.getFullYear(), 0, 1);
         const days = Math.floor((date - startOfYear) / (24 * 60 * 60 * 1000));
@@ -29,6 +30,7 @@ const BarChartWeeklyVisualization = () => {
         }
     });
 
+    //chart labels -->
     const labels = Object.keys(workoutCountsByWeek);
     const data = {
         labels,

@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 
+//zystand store for managing state of workouts, and saving them to local storage
 const useWorkoutStore = create((set,get) => ({
     //state
     workouts: JSON.parse(localStorage.getItem('workouts')) || [],

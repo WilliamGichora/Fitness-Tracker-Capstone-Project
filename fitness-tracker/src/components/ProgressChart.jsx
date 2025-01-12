@@ -14,10 +14,12 @@ const options = {
     },
 };
 
+//Line chart to show total accumulative weights lifted per day
 function ProgressChart() {
 
     const workouts = useWorkoutStore(state => state.workouts);
     
+    //reduc function to return total accumulatice weight lifted for all workouts per day
     const weightData = workouts.reduce((acc, workout) => {
         const date = new Date(workout.timestamp).toLocaleDateString();
         const totalWeight = workout.exercises.reduce((sum, ex) => sum + ex.weight * ex.reps * ex.sets, 0);
@@ -43,7 +45,7 @@ function ProgressChart() {
     };
 
     return (
-        <section className="container mx-auto my-8 font-poppins  ">
+        <section className="container mx-auto my-8 font-poppins">
             <Line data={chartData} options={options} className="mx-auto w-full" />
         </section>
     )

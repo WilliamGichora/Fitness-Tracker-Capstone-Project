@@ -45,7 +45,7 @@ function LogWorkout() {
     console.log(finalExercises);
     
 
-    //React Form Hook
+    //React Form Hook. Manages error messages displays and form validation 
     const { register, handleSubmit, control, reset, formState: { errors } } = useForm({
         resolver: yupResolver(schema),
         defaultValues: {
@@ -69,7 +69,7 @@ function LogWorkout() {
         reset();
     };
 
-    //function to 
+    //function to add the selected exercise name together with its set,reps and weights inputs to the fields array
     const handleAddExercise = (exerciseName,exerciseID) => {
         if (!fields.find((field) => field.name === exerciseName)) {
             append({ name: exerciseName,id:exerciseID, sets: "", reps: "", weight: "" });

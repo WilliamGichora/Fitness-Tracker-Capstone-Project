@@ -4,6 +4,7 @@ import hamburger from "../../assets/burger-menu-svgrepo-com.svg";
 import close from "../../assets/close-svgrepo-com.svg";
 
 function Header() {
+    //state to track if the hambuger menu on medium to light screens is open or closed, and rendering the styles appropriately
     const [isOpen, setIsOpen] = useState(false);
 
     return (

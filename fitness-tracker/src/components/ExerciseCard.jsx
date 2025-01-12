@@ -1,9 +1,7 @@
 import placeHolder from '../assets/background1.jpeg'
 
+//exercise card displays
 function ExerciseCard({ exercise }) {
-
-    const placeholderImage = "https://via.placeholder.com/100";
-
     return (
         <div className="flex  flex-col items-center bg-[#31363F] rounded-md shadow-md hover:shadow-lg transition-all overflow-hidden border border-lime-500 font-poppins">
             {/* Image Section */}

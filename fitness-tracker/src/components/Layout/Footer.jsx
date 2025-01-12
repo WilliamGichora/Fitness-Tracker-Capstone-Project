@@ -17,7 +17,7 @@ function Footer() {
             GitHub
           </a>
           <a
-            href="www.linkedin.com/in/mark-gichora"
+            href="https://www.linkedin.com/in/mark-gichora/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-100 hover:text-white"
@@ -25,7 +25,7 @@ function Footer() {
             LinkedIn
           </a>
           <a
-            href="https://twitter.com/MarkGichora"
+            href="https://twitter.com/Mark_W_Gichora"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-100 hover:text-white"

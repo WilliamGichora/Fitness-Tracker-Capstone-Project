@@ -3,10 +3,14 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import useWorkoutStore from "../stores/useWorkoutStore"
 
 ChartJS.register(ArcElement, Tooltip, Legend);
+
+//Doughnut chart to visualiz the comparison of different exercises done in the previous workouts
 function ExerciseTypeDoughnutChart() {
     const workouts = useWorkoutStore(state => state.workouts);
 
     const exerciseCounts = {};
+
+    //function to increase or add the count of logged exercises, to track how many times an exercise has been performed
     workouts.forEach((workout) => {
         workout.exercises.forEach((exercise) => {
             if (exerciseCounts[exercise.name]) {

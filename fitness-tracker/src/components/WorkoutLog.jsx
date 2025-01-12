@@ -1,4 +1,5 @@
 import useWorkoutStore from "../stores/useWorkoutStore";
+import placeHolder from "../assets/alternative.jpg"
 
 function WorkoutLog() {
   const workouts = useWorkoutStore((state) => state.workouts);
@@ -13,9 +14,6 @@ function WorkoutLog() {
     acc[date].push(...workout.exercises);
     return acc;
   }, {});
-
-  console.log(groupedWorkouts);
-  
 
   return (
     <section className="p-6 font-poppins">
@@ -34,7 +32,7 @@ function WorkoutLog() {
                   className="bg-white rounded-lg shadow p-4 flex flex-col items-center text-center"
                 >
                   <img
-                    src={`/images/${exercise.name.replace(/\s/g, "_")}.jpg`}
+                    src={placeHolder}
                     alt={exercise.name}
                     className="w-full h-32 object-cover rounded mb-2"
                   />

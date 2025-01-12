@@ -1,3 +1,4 @@
+//This is the component displayed whe an invalid/unknown route is accessed in the website
 const ErrorNotFound = () => {
     return (
         <section className=" flex items-center justify-center min-h-screen bg-gray-100 p-5">

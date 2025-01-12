@@ -13,6 +13,7 @@ function Home() {
             Progress Overview
           </h2>
 
+          {/*Home page Visualizations */}
           <div className="md:hidden flex flex-row gap-4 overflow-x-auto overflow-y-hidden max-h-96 scrollbar-hide">
             <div className="rounded-xl shadow-lg bg-white/10 p-4 min-w-[90%]">
               <h3 className="text-lg font-semibold mb-1 text-center text-specialGray">
@@ -42,6 +43,7 @@ function Home() {
           </div>
         </div>
 
+        {/* Homepage Workout List */}
         <div className="h-72">
           <h2 className="text-xl font-bold mt-2 mb-4 text-center text-gray-900">
             Workout History
@@ -53,12 +55,14 @@ function Home() {
         </div>
       </section>
 
+      {/*On mobile screens, we have an add workout icon instead of a the section below it */}
       <div className="md:hidden w-16 border-none sticky left-full bottom-6">
         <Link to={"/LogWorkout"}>
           <img src={circle} alt="Log Workout" className="bg-lime-600/100 rounded-full border-none" />
         </Link>
       </div>
 
+      {/* in medium to large screens */}
       <section className="hidden w-full md:w-1/3 md:flex flex-col gap-6">
         <div className="rounded-xl shadow-lg bg-white/10 p-4 relative">
           <div className="h-60 bg-background2 bg-cover bg-center rounded-lg"></div>
