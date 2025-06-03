@@ -32,8 +32,7 @@ function ExerciseCategory() {
         enabled: !!selectedCategory,
     });
 
-    console.log(exercisesOfCategory);
-
+    //console.log(exercisesOfCategory);
 
     const images = [abs, arms, back, calves, cardio, chest, legs, shoulders];
 
